@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static tailwind_tags %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+ {% block title %}<title>My Software Engineering Blog</title>{% endblock %}
+<link rel="stylesheet" href={% static "index.css" %} >
+{% block css_files %}{% endblock %}
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50">
+    {% block content %}{% endblock %}
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>Copyright © 2024 by My Software Engineering Blog. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
