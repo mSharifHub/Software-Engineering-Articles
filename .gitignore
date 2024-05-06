@@ -17,6 +17,9 @@ media
 .idea/**/dictionaries
 .idea/**/shelf
 
+
+.idea/
+
 # AWS User-specific
 .idea/**/aws.xml
 
@@ -98,7 +101,7 @@ celerybeat-schedule.*
 *.sage.py
 
 # Environments
-.env
+my_site/.env
 .venv
 env/
 venv/

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "index.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    <section
+            class="min-h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto hover:overflow-scroll p-4 mx-20 ">
+
+       <article class="flex flex-col justify-center items-center border-2 w-full h-80 bg-white shadow-lg rounded-lg p-4 transition-scale duration-100 ease-out hover:scale-105 cursor-pointer">
+        <a href="" class="flex-shrink-0">
+            <img src="{% static "blog/images/api-post-image.png" %}" alt="latest-post-image" class="h-48 w-full md:w-80 rounded object-cover mx-auto">
+        </a>
+        <div class="text-center mt-4">
+            <h3 class="text-lg text-gray-900 font-semibold">Dummy Latest Post</h3>
+            <p class="text-gray-600">This is a description of my latest post. Read more about it here!</p>
+        </div>
+    </article>
+
+    </section>
+{% endblock %}
+
+
