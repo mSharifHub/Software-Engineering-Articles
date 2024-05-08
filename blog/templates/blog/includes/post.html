@@ -1,14 +1,14 @@
- {% load static %}
-
-     <article
-             class=" h-[20rem] absolute left-1/2 top-[7rem] transform -translate-x-1/2 -translate-y-1/10 bg-gray-100 p-5 rounded shadow-lg z-10 flex flex-col justify-center items-center border-2 ">
-         <div class="mt-4 md:mt-0 md:ml-6">
-             <a href="" class="flex-shrink-0">
-                 <img src="{% static "blog/images/api-post-image.png" %}" alt="latest-post-image"
-                      class="h-48 w-full md:w-80 rounded object-cover">
-             </a>
-             <h3 class="text-lg text-gray-900 font-semibold">Dummy Latest Post</h3>
-             <p class="text-gray-600">This is a description of my latest post. Read more about it here!</p>
-         </div>
-     </article>
-
+{% load static %}
+{% block content %}
+    <a href="{% url 'post-detail-page' latest_post.slug %}" aria-label="Read more about {{ latest_post.title }}">
+        <article>
+            <div class="h-[20rem] w-[20rem] md:w-[30rem] absolute left-1/2 top-[7rem] transform -translate-x-1/2 -translate-y-1/10 bg-gray-100 p-2 rounded shadow-lg transition-all duration-150 ease-out hover:translate-y-20 hover:scale-125">
+                <div class="h-full relative flex flex-col justify-center items-center">
+                    <img src="{% static 'blog/images/'|add:latest_post.image %}" alt="{{ latest_post.title }}"
+                         class=" h-full object-cover rounded-lg">
+                </div>
+                <h3 class="absolute -bottom-10 left-1/2 -translate-x-1/2 uppercase text-lg bg-slate-500 text-white p-2 rounded-lg">{{ latest_post.title }}</h3>
+            </div>
+        </article>
+    </a>
+{% endblock %}

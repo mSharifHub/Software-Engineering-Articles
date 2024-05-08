@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "tailwind",  # tailwind
     "theme",  # tailwind app theme,
-    "django_browser_reload"  # reload after making changes
+    "django_browser_reload",  # reload after making changes
 ]
 
 TAILWIND_APP_NAME = "theme"

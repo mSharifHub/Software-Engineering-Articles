@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
-
-    {% include "blog/includes/post.html" %}
-
-
+    {% if latest_post %}
+        {% include "blog/includes/post.html" %}
+    {% else %}
+        <p>No posts available.</p>
+    {% endif %}
 {% endblock %}
 

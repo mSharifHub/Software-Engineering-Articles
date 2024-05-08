@@ -15,20 +15,23 @@
 </head>
 
 <body class="flex flex-col min-h-screen min-w-screen ">
-    <header class="relative flex flex-col justify-start items-center h-40 bg-slate-700 ">
-        <div class="container flex flex-row justify-between items-center mt-10  text-white">
+    <header class="relative flex flex-col  h-40 bg-slate-600 ">
+        <div class=" flex flex-row justify-start items-center mt-10  text-white">
             <div class="text-2xl capitalize mx-4 ">
-                my software engineering articles
+               <a href="{% url "starting-page" %}">
+                <span> my software engineering articles</span>
+                </a>
             </div>
         </div>
     </header>
 
 {% block content %} {% endblock %}
 
-</body>
-<footer class="bg-slate-700 text-white py-6 mt-auto">
+<footer class="bg-slate-600 text-white py-6 mt-auto">
     <div class="container mx-auto px-6 text-center">
         <p>Copyright © 2024 by Mohamed Sharif . All rights reserved.</p>
     </div>
 </footer>
+</body>
+
 </html>
