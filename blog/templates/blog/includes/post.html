@@ -1,11 +1,12 @@
+<!--This file is the template for post. The data is loop from the source of post data and shown to the user-->
 {% load static %}
 {% block content %}
-    <a href="{% url 'post-detail-page' latest_post.slug %}" aria-label="Read more about {{ latest_post.title }}">
+    <a href="{% url 'post-detail-page' latest_post.slug %}">
         <article>
             <div class="h-[20rem] w-[20rem] md:w-[30rem] absolute left-1/2 top-[7rem] transform -translate-x-1/2 -translate-y-1/10 bg-gray-100 p-2 rounded shadow-lg transition-all duration-150 ease-out hover:translate-y-20 hover:scale-125">
                 <div class="h-full relative flex flex-col justify-center items-center">
                     <img src="{% static 'blog/images/'|add:latest_post.image %}" alt="{{ latest_post.title }}"
-                         class=" h-full object-cover rounded-lg">
+                         class=" h-full object-cover rounded-lg"/>
                 </div>
                 <h3 class="absolute -bottom-10 left-1/2 -translate-x-1/2 uppercase text-lg bg-slate-500 text-white p-2 rounded-lg">{{ latest_post.title }}</h3>
             </div>

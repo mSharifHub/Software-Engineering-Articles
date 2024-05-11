@@ -1,24 +1,10 @@
 from django.shortcuts import render
-import datetime
-
-post_dummydata = [
-    {
-        "slug": "apis-in-practice",
-        "image": "api-post-image.png",
-        "author": "Mohamed Sharif",
-        "date": datetime.date(2024, 4, 1),
-        "title": "Api in practice",
-        "content": "Long content goes here..."
-
-    }
-]
+from .dummy_data import post_dummydata
 
 
 def get_date(post):
     return post["date"]
 
-
-# Create your views here.
 
 def starting_page(request):
     valid_posts = [post for post in post_dummydata if post.get('date') is not None]
@@ -33,8 +19,13 @@ def starting_page(request):
 
 
 def posts(request):
-    return render(request, "blog/all-posts.html")
+    return render(request, "blog/all-posts.html", {
+        "all_posts": post_dummydata,
+    })
 
 
 def post_detail(request, slug):
-    return render(request, "blog/post-detail.html")
+    identified_post = next(post for post in post_dummydata if post['slug'] == slug)
+    return render(request, "blog/post-detail.html", {
+        "post": identified_post,
+    })
