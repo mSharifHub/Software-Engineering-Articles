@@ -6,7 +6,7 @@ post_dummydata = [
         "image": "api-post-image.png",
         "author": "Mohamed Sharif",
         "date": datetime.date(2024, 4, 1),
-        "title": "Api in practice",
+        "title": "Api In Practice",
         "content": """
     repository -> https://github.com/mSharifHub/googleMapsPinLocation
 

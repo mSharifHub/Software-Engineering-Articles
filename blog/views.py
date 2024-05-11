@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .dummy_data import post_dummydata
+from django.shortcuts import render, get_object_or_404
+from .models import Post
 
 
 def get_date(post):
@@ -7,25 +7,17 @@ def get_date(post):
 
 
 def starting_page(request):
-    valid_posts = [post for post in post_dummydata if post.get('date') is not None]
-
-    if valid_posts:
-        sorted_posts = sorted(valid_posts, key=get_date, reverse=True)
-        latest_post = sorted_posts[0]
-    else:
-        latest_post = None
-
-    return render(request, "blog/index.html", {"latest_post": latest_post})
+    latest_posts = Post.objects.order_by('-date').first()
+    return render(request, "blog/index.html", {"latest_post": latest_posts})
 
 
 def posts(request):
-    return render(request, "blog/all-posts.html", {
-        "all_posts": post_dummydata,
-    })
+    all_posts = Post.objects.all()
+    return render(request, "blog/all-posts.html", {"all_posts": all_posts})
 
 
 def post_detail(request, slug):
-    identified_post = next(post for post in post_dummydata if post['slug'] == slug)
+    identified_post = get_object_or_404(Post, slug=slug)
     return render(request, "blog/post-detail.html", {
         "post": identified_post,
     })

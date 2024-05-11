@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <h2 class="text-3xl  text-center mb-8 text-gray-600 capitalize">{{ post.title }}</h2>
+   <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        <h2 class="text-3xl text-center mb-8 text-gray-600 capitalize">{{ post.title }}</h2>
         <article class="overflow-hidden rounded-lg shadow-lg">
-            <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}"
+            <img src="{{ post.image.url }}" alt="{{ post.title }}"
                  class="w-full h-auto object-cover object-center"/>
             <div class="py-5 px-6 bg-white">
                 <p class="text-gray-700 text-lg leading-loose mb-6">
                     {{ post.content | safe }}
                 </p>
-
                 <div class="flex justify-between items-center mt-4">
                     <span class="text-sm text-gray-600">{{ post.date|date:"M d, Y" }}</span>
                 </div>
             </div>
         </article>
+    </section>e>
     </section>
 {% endblock %}

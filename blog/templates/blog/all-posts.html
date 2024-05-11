@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-    <section
+      {% if all_posts %}
+           <section
             class="min-h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto hover:overflow-scroll p-4 mx-20 ">
+                {% for post in all_posts %}
+                    {% include "blog/includes/all_post.html" %}
+                {% endfor %}
+            </section>
+        {% endif %}
 
-        {% for post in all_posts %}
-            {% include "blog/includes/all_post.html" %}
-        {% endfor %}
-
-
-    </section>
 {% endblock %}
 
 
