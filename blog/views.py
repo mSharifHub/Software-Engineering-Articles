@@ -2,10 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 
-def get_date(post):
-    return post["date"]
-
-
 def starting_page(request):
     latest_posts = Post.objects.order_by('-date').first()
     return render(request, "blog/index.html", {"latest_post": latest_posts})

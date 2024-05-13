@@ -2,13 +2,13 @@
 {% load static %}
 {% block content %}
     {% if latest_post %}
-        <a href="{% url 'post-detail-page' latest_post.slug %}">
+        <a href="{{ latest_post.get_absolute_url }}">
             <article class="flex justify-center">
-                <div class="h-80 w-[30rem] relative -top-10 bg-gray-100 p-2 rounded shadow-lg transition-all duration-150 ease-out hover:-translate-y-5 hover:md:scale-105">
+                <div class="transition-all duration-150 ease-out h-80 w-[30rem] relative md:-top-10 bg-gray-100 p-2 rounded shadow-lg  hover:-translate-y-5 hover:md:scale-105">
                     <div class="h-full relative flex flex-col justify-center items-center">
                         <img src="{{ latest_post.image.url }}" alt="{{ latest_post.title }}" class=" h-full object-cover rounded-lg"/>
                     </div>
-                    <h3 class="absolute -bottom-10 left-1/2 -translate-x-1/2 uppercase text-lg bg-slate-500 text-white p-2 rounded-lg">{{ latest_post.title }}</h3>
+                    <h3 class="absolute -bottom-10 left-1/2 -translate-x-1/2 capitalize text-lg bg-slate-500 text-white p-2 rounded-lg">latest Article</h3>
                 </div>
             </article>
         </a>

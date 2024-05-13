@@ -10,26 +10,44 @@
     {% tailwind_css %}
     {% block title %}<title>My Software Engineering Blog</title>{% endblock %}
     <link rel="stylesheet" href={% static "css/dist/styles.css" %}>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     {% block css_files %}{% endblock %}
 </head>
 
-<body class="flex flex-col min-h-screen min-w-screen ">
-    <header class="relative flex flex-col  h-40 bg-slate-600 ">
-        <div class=" flex flex-row justify-start items-center mt-10  text-white">
-            <div class="text-2xl capitalize mx-4 ">
-               <a href="{% url "starting-page" %}">
-                <span> my software engineering articles</span>
-                </a>
-            </div>
-        </div>
-    </header>
+<body class="flex flex-col min-h-screen min-w-screen">
+<header class="relative flex flex-col  h-20 shadow-md">
+    <div class=" grid grid-cols-2 mt-4">
+        <div class="col-span-1 col-start-2 flex justify-end items-center p-2 mx-4">
+            {% if request.path != "/" %}
+                <div class=" mx-4 w-10  flex justify-center items-center  cursor-pointer  text-2xl ">
+                    <a href="/"> <i class="fa fa-home"></i></a>
+                </div>
+            {% else %}
+
+                <div class="font-black text-2xl ">
+                    <a href="/posts">
+                        <i class="fa-solid fa-newspaper"></i>
+
+                    </a>
+                </div>
+
+                </div>
+            {% endif %}
+    </div>
+</header>
 
 {% block content %} {% endblock %}
 
-<footer class="bg-slate-600 text-white py-6 mt-auto">
-    <div class="container mx-auto px-6 text-center">
-        <p>Copyright © 2024 by Mohamed Sharif . All rights reserved.</p>
+<footer class="border-t-2 drop-shadow-md  py-6 mt-auto">
+    <div class="container mx-auto px-6 text-center text-nowrap">
+            <p>Use it under the terms of the MIT License
+                    <a
+                        href="https://github.com/mSharifHub/Software-Engineering-Articles" class="text-white">
+                        <i
+                                class="fab fa-github text-black text-4xl  mx-4">
+                        </i>
+                    </a>
+            </p>
     </div>
 </footer>
 </body>
