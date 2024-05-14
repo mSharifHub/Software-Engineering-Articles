@@ -7,5 +7,36 @@
     {% else %}
         <p>No posts available.</p>
     {% endif %}
+
+
+
+
+    <div class="flex justify-center items-center overflow-x-auto mx-18 relative">
+        {% if all_posts %}
+            <div class="flex flex-nowrap space-x-4">
+                {% for post in all_posts %}
+                    <div class=" flex  justify-center items-center h-[40rem] w-[30rem] ">
+                        {% include "blog/includes/all_post.html" with post=post %}
+                    </div>
+                {% endfor %}
+            </div>
+            </div>
+        {% endif %}
+
+    <div class="flex justify-center items-center  mx-20 shadow-lg rounded-lg whitespace-normal break-normal p-4 bg-slate-500 text-white">
+         <p>
+            Hello, I am <strong class="font-bold">Sharif Mohamed</strong>. I have a
+            <strong class="font-bold">B.S in Computer Science</strong> and focus on all aspects of software engineering.
+            I started to write articles on LinkedIn and decided to start sharing here in this application blog.
+            This is an ongoing project and content will be uploaded. If you like to collaborate, feel free to fork and contact me.
+            I have made this page to list a series of articles I have written and will continue to create content.
+            This application is written in <strong class="font-bold">Python</strong> using <strong class="font-bold">Django</strong> and
+            <strong class="font-bold">TailwindCSS</strong>. Below, you can connect with me on <em class="font-bold">LinkedIn</em> and
+            <em class="font-bold">GitHub</em>.
+        </p>
+
+    </div>
+
+
 {% endblock %}
 

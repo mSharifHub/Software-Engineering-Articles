@@ -17,7 +17,11 @@
 <body class="flex flex-col min-h-screen min-w-screen">
 <header class="relative flex flex-col  h-20 shadow-md">
     <div class=" grid grid-cols-2 mt-4">
-        <div class="col-span-1 col-start-2 flex justify-end items-center p-2 mx-4">
+        <div class="cols-span-1 col-start-1 mx-4 text-2xl font-thin capitalize  text-slate-800"> software engineering
+            articles
+        </div>
+
+        <div class="col-span-1 col-start-2 flex justify-end  gap-4 items-center p-2 mx-4">
             {% if request.path != "/" %}
                 <div class=" mx-4 w-10  flex justify-center items-center  cursor-pointer  text-2xl ">
                     <a href="/"> <i class="fa fa-home"></i></a>
@@ -39,15 +43,17 @@
 {% block content %} {% endblock %}
 
 <footer class="border-t-2 drop-shadow-md  py-6 mt-auto">
-    <div class="container mx-auto px-6 text-center text-nowrap">
-            <p>Use it under the terms of the MIT License
-                    <a
-                        href="https://github.com/mSharifHub/Software-Engineering-Articles" class="text-white">
-                        <i
-                                class="fab fa-github text-black text-4xl  mx-4">
-                        </i>
-                    </a>
-            </p>
+    <div class="container mx-auto flex justify-center items-center space-x-20">
+        <a
+                href="https://github.com/mSharifHub/Software-Engineering-Articles" class="text-white">
+            <i
+                    class="fab fa-github text-black text-6xl  mx-4">
+            </i>
+        </a>
+          <a href="https://www.linkedin.com/in/mohamed-sharif-47301520b/">
+            <div class=" fab fa-linkedin text-6xl flex justify-center items-center "></div>
+          </a>
+
     </div>
 </footer>
 </body>
