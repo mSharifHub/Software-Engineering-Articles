@@ -3,25 +3,23 @@
 
 {% block content %}
     {% if latest_post %}
-        {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
     {% else %}
         <p>No posts available.</p>
     {% endif %}
 
-
-
-
-    <div class="flex justify-center items-center overflow-x-auto mx-18 relative">
+    <div class="flex overflow-x-auto mx-10 relative">
         {% if all_posts %}
-            <div class="flex flex-nowrap space-x-4">
+            <div class="flex  justify-center items-center space-x-4">
                 {% for post in all_posts %}
                     <div class=" flex  justify-center items-center h-[40rem] w-[30rem] ">
                         {% include "blog/includes/all_post.html" with post=post %}
                     </div>
                 {% endfor %}
             </div>
-            </div>
+
         {% endif %}
+    </div>
 
     <div class="flex justify-center items-center  mx-20 shadow-lg rounded-lg whitespace-normal break-normal p-4 bg-slate-500 text-white">
          <p>
