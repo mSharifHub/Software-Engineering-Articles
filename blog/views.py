@@ -3,7 +3,7 @@ from .models import Post
 
 
 def starting_page(request):
-    latest_posts = Post.objects.order_by('-date').first()
+    latest_posts = Post.objects.order_by('-date')[0]
     all_posts = Post.objects.all()
     return render(request, "blog/index.html", {"latest_post": latest_posts, "all_posts": all_posts})
 

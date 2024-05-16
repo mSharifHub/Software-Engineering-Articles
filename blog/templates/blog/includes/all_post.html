@@ -1,14 +1,18 @@
 {% load static %}
 {% block content %}
     {% if all_posts %}
-       <a href="{% url 'post-detail-page' post.slug %}">
-    <article
-        class="w-auto max-w-[40rem] h-auto transition-all duration-100 ease-out  flex-nowrap relative bg-gray-100 p-2 rounded shadow-lg hover:border-2 border-black">
-        <img src="{{ post.image.url }}" alt="{{ post.title }}"
-             class="h-[24rem] w-full object-fill border-2">
-    </article>
-</a>
+         <div class="justify-items-center h-80 w-auto  bg-slate-200 shadow-md rounded-lg box-border  border-black hover:border-2  ">
+                     <a href="{% url 'post-detail-page' post.slug %}">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="h-full rounded-lg"/>
+                     </a>
+                </div>
+
     {% else %}
         <p>No post found</p>
     {% endif %}
 {% endblock %}
+
+
+
+
+
