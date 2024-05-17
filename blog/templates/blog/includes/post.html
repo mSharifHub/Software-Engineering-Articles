@@ -4,7 +4,7 @@
     {% if latest_post %}
             <article class="flex justify-center">
 
-                <div class="transition-all duration-150 ease-out h-80 w-[30rem] relative md:-top-10 bg-gray-100 p-2 rounded shadow-lg  hover:lg:-translate-y-5 hover:lg:scale-105">
+                <div class="transition-all duration-150 ease-out h-80 w-[30rem] relative md:-top-5 bg-gray-100 p-2 rounded shadow-lg  hover:lg:-translate-y-5 hover:lg:scale-105">
                      <a href="{{ latest_post.get_absolute_url }}">
                     <div class="h-full relative flex flex-col justify-center items-center">
                         <img src="{{ latest_post.image.url }}" alt="{{ latest_post.title }}" class=" h-full object-cover rounded-lg"/>
